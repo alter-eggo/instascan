@@ -4,10 +4,10 @@ install: npm install
 script: gulp release
 env:
   global:
-    - COMMIT_AUTHOR_NAME: "'Chris Schmich'"
-    - COMMIT_AUTHOR_EMAIL: 'schmch@gmail.com'
+    - COMMIT_AUTHOR_NAME: "'Fábio Naspolini'"
+    - COMMIT_AUTHOR_EMAIL: 'fabionaspolini@gmail.com'
     - ENCRYPTION_LABEL: 95f025fe7ce3
-deploy: 
+deploy:
   provider: script
   script: bash ./deploy/deploy.sh
   skip_cleanup: true
