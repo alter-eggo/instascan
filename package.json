@@ -1,5 +1,5 @@
 {
-  "name": "@alter-ego/qrcode-scanner",
+  "name": "@alter-eggo/instascan",
   "version": "1.0.0",
   "description": "Webcam-driven QR code scanner - Forked from instascan.",
   "main": "index.js",
