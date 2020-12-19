@@ -1,6 +1,6 @@
 {
   "name": "@alter-ego/instascan-alter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webcam-driven QR code scanner - Forked from instascan.",
   "main": "index.js",
   "scripts": {
