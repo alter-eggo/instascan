@@ -4,7 +4,7 @@ const Visibility = require('visibilityjs');
 const StateMachine = require('fsm-as-promised');
 
 class ScanProvider {
-  constructor(emitter analyzer, captureImage, scanPeriod, refractoryPeriod) {
+  constructor(emitter, analyzer, captureImage, scanPeriod, refractoryPeriod) {
     this.scanPeriod = scanPeriod;
     this.captureImage = captureImage;
     this.refractoryPeriod = refractoryPeriod;
