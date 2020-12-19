@@ -17,20 +17,7 @@ class Camera {
     this._stream = null;
   }
 
-  async start() {
-    let constraints = {
-      audio: false,
-      video: {
-        mandatory: {
-          sourceId: this.id,
-          minWidth: 600,
-          maxWidth: 800,
-          minAspectRatio: 1.6
-        },
-        optional: []
-      }
-    };
-
+  async start(constraints) {
     this._stream = await Camera._wrapErrors(async () => {
       return await navigator.mediaDevices.getUserMedia(constraints);
     });

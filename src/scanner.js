@@ -4,7 +4,7 @@ const Visibility = require('visibilityjs');
 const StateMachine = require('fsm-as-promised');
 
 class ScanProvider {
-  constructor(emitter, analyzer, captureImage, scanPeriod, refractoryPeriod) {
+  constructor(emitter analyzer, captureImage, scanPeriod, refractoryPeriod) {
     this.scanPeriod = scanPeriod;
     this.captureImage = captureImage;
     this.refractoryPeriod = refractoryPeriod;
@@ -166,6 +166,7 @@ class Scanner extends EventEmitter {
     this._continuous = (opts.continuous !== false);
     this._analyzer = new Analyzer(this.video);
     this._camera = null;
+    this._constraints = opts.constraints;
 
     let captureImage = opts.captureImage || false;
     let scanPeriod = opts.scanPeriod || 1;
@@ -288,7 +289,7 @@ class Scanner extends EventEmitter {
       throw new Error('Camera is not defined.');
     }
 
-    let stream = await this._camera.start();
+    let stream = await this._camera.start(this._constraints);
     this.video.srcObject = stream;
 
     if (this._continuous) {
